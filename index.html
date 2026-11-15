@@ -107,6 +107,10 @@ h2.t::after{content:"";display:block;width:100px;height:2px;margin:10px auto 0;b
 .pill input:checked+span::after{content:"✓";position:absolute;top:-7px;right:-5px;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--lt);font-size:13px;display:flex;align-items:center;justify-content:center}
 .pill input:active+span{transform:scale(.96)}
 .pill input:focus-visible+span{outline:3px solid var(--navy);outline-offset:2px}
+.fam{padding:22px 20px;font-size:16px}
+.fam p{margin:4px 0}
+.fam .sc{font-size:calc(var(--ss)*38px);margin:2px 0}
+.fam .fs{font-size:14px;color:var(--muted);margin:0 0 6px}
 </style></head><body class="lock">
 <div class="bar"><button data-l="en" class="on">EN</button><button data-l="hi">हिं</button><button data-l="gu">ગુ</button></div>
 
@@ -132,9 +136,9 @@ h2.t::after{content:"";display:block;width:100px;height:2px;margin:10px auto 0;b
 
 <div class="fam rv">
   <p data-t="fam1"></p>
-  <p class="sc" data-t="bn"></p><p data-t="bsub"></p>
-  <p data-t="with"></p>
-  <p class="sc" data-t="gn"></p><p data-t="gsub"></p>
+  <p class="sc" data-t="bn"></p><p class="fs" data-t="bsub"></p>
+  <p class="fs" data-t="with"></p>
+  <p class="sc" data-t="gn"></p><p class="fs" data-t="gsub"></p>
 </div>
 
 <h2 class="t rv" data-t="deptT"></h2>
@@ -193,50 +197,50 @@ var LG="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAigAAAGfCAYAAAB1KinVAAEAAE
 var T={
 en:{inv:"Invites you to",pass:"The Wedding Passport",cn:"Aditi with Shubham",fn:"Aditi",gfn:"Shubham",cdate:"Wednesday, 9th December 2026",open:"Stamp my passport",fabT:"Confirm my seat",hold:"Hold the date",
 dest:"Destination: Kalika Dham, Dandupur, Varanasi. Boarding: 9 December 2026, 8:00 PM.",
-fam1:"With the divine blessings of Lord Ganesha and the grace of Vajreshwari Devi, Mrs. Niraj Saraswat and Mr. Avdhesh Saraswat request your gracious presence at the wedding of their beloved daughter",
-bn:"Aditi Saraswat",bsub:"granddaughter of Late Mrs. Shakuntala Devi and Mr. Harisharan Saraswat",with:"with",gn:"Shubham Singh",
-gsub:"son of Mrs. Meena Singh and Late Mr. Sanjay Singh, grandson of Mrs. Nirmala Devi and Mr. Radheshyam Singh",
+fam1:"Mrs. Niraj Saraswat & Mr. Avdhesh Saraswat invite you to the wedding of their daughter",
+bn:"Aditi Saraswat",bsub:"grand daughter of Late Mrs. Shakuntala Devi and Mr. Harisharan Saraswat",with:"with",gn:"Shubham Singh",
+gsub:"son of Mrs. Meena Singh & Late Mr. Sanjay Singh",
 m1:"O Lord Ganesha, of curved trunk and mighty form, with the brilliance of a million suns, make all our work free of obstacles, always.",
 m2:"Take seven steps with me and be my friend; may I always walk in friendship with you and never be parted from it.",
 m3:"To the Goddess of all auspiciousness, the fulfiller of every wish, our refuge: we bow to you.",
 deptT:"Departures",deptS:"Tap any flight to see its gate.",bt1:"Wedding Passport",gate:"Gate",gd:"Tap a flight above",maps:"Open in Maps",
-dressT:"What to wear",d1:"Mehendi: green",d2:"Haldi: yellow",d3:"Sangeet: glitter & glam",d4:"Wedding: traditional & royal",
+dressT:"What to wear",d1:"Mehendi: green",d2:"Haldi: South Indian",d3:"Sangeet: glitter & glam",d4:"Wedding: traditional & royal",
 passT:"Your boarding pass",passS:"Add your name, pick your events and confirm your seat.",nameL:"Your name (or your family’s)",gL:"Guests",aL:"I’ll be joining for",
 l1:"Destination",l2:"Boarding",v2:"9 Dec, 8:00 PM",rs:"Send my love & confirm my seat 💌",cl:"Add the wedding to my calendar",sr:"Share this invitation",seat:"Seat",side:"Bride’s side\nFront row",guest:"Mystery Guest",
 k1:"“Masi ki shaadi mein hum machayenge dhamaal, aap bhi aana banke kamaal!!”",k2:"Paw-sitively excited! My hooman is getting married, and you’re invited!",
-f1:"Invited by Shri Harisharan Saraswat and all family members.",f2:"Best compliments: Vishal, Anshul, Yug & Siya. With best wishes: Suyesh & Mandeepkaur Saraswat.",
+f1:"Invited by Shri Harisharan Saraswat and all family members.",f2:"Best compliments: Mandeep Kaur & Suyesh Saraswat",
 ev:["Ganesh Puja","Mehendi","Haldi","Sangeet","Baraat arrival","Phere"],
 q:["Two families, one celebration, a lifetime of blessings.","Seven steps, seven vows, one forever.","Where there is love, there is home."],dy:"days",hr:"hours",mn:"mins",sc:"secs"},
 hi:{inv:"आपको आमंत्रित करते हैं",pass:"वेडिंग पासपोर्ट",cn:"अदिति संग शुभम",fn:"अदिति",gfn:"शुभम",cdate:"बुधवार, 9 दिसंबर 2026",open:"पासपोर्ट पर मुहर लगाएँ",fabT:"सीट पक्की करें",hold:"तारीख़ याद रखिए",
 dest:"गंतव्य: कालिका धाम, दंडुपुर, वाराणसी। प्रस्थान: 9 दिसंबर 2026, रात 8:00 बजे।",
-fam1:"भगवान श्री गणेश के आशीर्वाद और माँ वज्रेश्वरी देवी की कृपा से श्रीमती नीरज सारस्वत एवं श्री अवधेश सारस्वत अपनी लाडली पुत्री के विवाह समारोह में आपकी गरिमामयी उपस्थिति की कामना करते हैं",
+fam1:"श्रीमती नीरज सारस्वत एवं श्री अवधेश सारस्वत अपनी पुत्री के विवाह में आपको सादर आमंत्रित करते हैं",
 bn:"अदिति सारस्वत",bsub:"स्व. श्रीमती शकुंतला देवी एवं श्री हरिशरण सारस्वत की पौत्री",with:"के साथ",gn:"शुभम सिंह",
-gsub:"श्रीमती मीना सिंह एवं स्व. श्री संजय सिंह के पुत्र, श्रीमती निर्मला देवी एवं श्री राधेश्याम सिंह के पौत्र",
+gsub:"श्रीमती मीना सिंह एवं स्व. श्री संजय सिंह के पुत्र",
 m1:"हे वक्रतुंड, महाकाय, करोड़ों सूर्यों के समान तेजस्वी गणपति देव, हमारे सभी कार्य सदा निर्विघ्न पूर्ण करें।",
 m2:"सात कदम मेरे साथ चलो और मेरे सखा/सखी बनो; मैं सदा तुम्हारी मित्रता निभाऊँ और कभी उससे दूर न होऊँ।",
 m3:"सभी मंगलों में मंगल, सब मनोरथ पूर्ण करने वाली शरणदायिनी देवी को हमारा नमन।",
 deptT:"प्रस्थान सूची",deptS:"किसी भी उड़ान पर टैप करें और स्थान देखें।",bt1:"वेडिंग पासपोर्ट",gate:"स्थान",gd:"ऊपर किसी उड़ान पर टैप करें",maps:"मैप में खोलें",
-dressT:"क्या पहनें",d1:"मेहंदी: हरा",d2:"हल्दी: पीला",d3:"संगीत: चमक-दमक",d4:"विवाह: पारंपरिक और शाही",
+dressT:"क्या पहनें",d1:"मेहंदी: हरा",d2:"हल्दी: साउथ इंडियन",d3:"संगीत: चमक-दमक",d4:"विवाह: पारंपरिक और शाही",
 passT:"आपका बोर्डिंग पास",passS:"अपना नाम लिखें, कार्यक्रम चुनें और सीट पक्की करें।",nameL:"आपका नाम (या परिवार का नाम)",gL:"मेहमान",aL:"मैं शामिल होऊँगा/होऊँगी",
 l1:"गंतव्य",l2:"प्रस्थान",v2:"9 दिसंबर, रात 8:00 बजे",rs:"प्यार भेजें और सीट पक्की करें 💌",cl:"कैलेंडर में जोड़ें",sr:"निमंत्रण साझा करें",seat:"सीट",side:"वधू पक्ष\nफ्रंट रो",guest:"खास मेहमान",
 k1:"“मासी की शादी में हम मचाएँगे धमाल, आप भी आना बनकर कमाल!!”",k2:"पॉ-ज़िटिवली एक्साइटेड! मेरी हूमन की शादी है, और आप आमंत्रित हैं!",
-f1:"निवेदक: श्री हरिशरण सारस्वत एवं समस्त परिवारजन।",f2:"सप्रेम: विशाल, अंशुल, युग और सिया। शुभकामनाओं सहित: सुयेश एवं मंदीपकौर सारस्वत।",
+f1:"निवेदक: श्री हरिशरण सारस्वत एवं समस्त परिवारजन।",f2:"सप्रेम: मंदीप कौर एवं सुयेश सारस्वत",
 ev:["गणेश पूजा","मेहंदी","हल्दी","संगीत","बारात आगमन","फेरे"],
 q:["दो परिवार, एक उत्सव, और जीवन भर का आशीर्वाद।","सात कदम, सात वचन, एक अनंत साथ।","जहाँ प्रेम है, वहीं घर है।"],dy:"दिन",hr:"घंटे",mn:"मिनट",sc:"सेकंड"},
 gu:{inv:"આપને આમંત્રિત કરે છે",pass:"વેડિંગ પાસપોર્ટ",cn:"અદિતિ સંગ શુભમ",fn:"અદિતિ",gfn:"શુભમ",cdate:"બુધવાર, 9 ડિસેમ્બર 2026",open:"પાસપોર્ટ પર સિક્કો મારો",fabT:"સીટ પાકી કરો",hold:"તારીખ યાદ રાખજો",
 dest:"ગંતવ્ય: કાલિકા ધામ, દંડુપુર, વારાણસી. પ્રસ્થાન: 9 ડિસેમ્બર 2026, રાત્રે 8:00 વાગ્યે.",
-fam1:"ભગવાન શ્રી ગણેશના આશીર્વાદ અને માતા વજ્રેશ્વરી દેવીની કૃપાથી શ્રીમતી નીરજ સારસ્વત અને શ્રી અવધેશ સારસ્વત તેમની લાડલી પુત્રીના લગ્ન સમારોહમાં આપની ગરિમામય ઉપસ્થિતિની વિનંતી કરે છે",
+fam1:"શ્રીમતી નીરજ સારસ્વત અને શ્રી અવધેશ સારસ્વત તેમની પુત્રીના લગ્નમાં આપને સાદર આમંત્રિત કરે છે",
 bn:"અદિતિ સારસ્વત",bsub:"સ્વ. શ્રીમતી શકુંતલા દેવી અને શ્રી હરિશરણ સારસ્વતની પૌત્રી",with:"સાથે",gn:"શુભમ સિંહ",
-gsub:"શ્રીમતી મીના સિંહ અને સ્વ. શ્રી સંજય સિંહના પુત્ર, શ્રીમતી નિર્મલા દેવી અને શ્રી રાધેશ્યામ સિંહના પૌત્ર",
+gsub:"શ્રીમતી મીના સિંહ અને સ્વ. શ્રી સંજય સિંહના પુત્ર",
 m1:"હે વક્રતુંડ, મહાકાય, કરોડો સૂર્ય સમાન તેજસ્વી ગણપતિ દેવ, અમારાં સર્વ કાર્યો સદા નિર્વિઘ્ન પૂર્ણ કરજો.",
 m2:"સાત ડગલાં મારી સાથે ચાલો અને મારા સખા/સખી બનો; હું સદા તમારી મૈત્રી નિભાવું અને ક્યારેય તેનાથી વિખૂટો ન પડું.",
 m3:"સર્વ મંગળોમાં મંગળ, સર્વ મનોરથ પૂર્ણ કરનારી શરણદાયિની દેવીને અમારા નમન.",
 deptT:"પ્રસ્થાન યાદી",deptS:"કોઈ પણ ફ્લાઇટ પર ટેપ કરો અને સ્થળ જુઓ.",bt1:"વેડિંગ પાસપોર્ટ",gate:"સ્થળ",gd:"ઉપર કોઈ ફ્લાઇટ પર ટેપ કરો",maps:"નકશામાં ખોલો",
-dressT:"શું પહેરવું",d1:"મહેંદી: લીલો",d2:"હળદર: પીળો",d3:"સંગીત: ચમક-દમક",d4:"લગ્ન: પરંપરાગત અને શાહી",
+dressT:"શું પહેરવું",d1:"મહેંદી: લીલો",d2:"હળદર: સાઉથ ઇન્ડિયન",d3:"સંગીત: ચમક-દમક",d4:"લગ્ન: પરંપરાગત અને શાહી",
 passT:"તમારો બોર્ડિંગ પાસ",passS:"તમારું નામ લખો, કાર્યક્રમો પસંદ કરો અને સીટ પાકી કરો.",nameL:"તમારું નામ (અથવા પરિવારનું નામ)",gL:"મહેમાન",aL:"હું હાજર રહીશ",
 l1:"ગંતવ્ય",l2:"પ્રસ્થાન",v2:"9 ડિસેમ્બર, રાત્રે 8:00 વાગ્યે",rs:"પ્રેમ મોકલો અને સીટ પાકી કરો 💌",cl:"કેલેન્ડરમાં ઉમેરો",sr:"આમંત્રણ શેર કરો",seat:"સીટ",side:"કન્યા પક્ષ\nફ્રન્ટ રો",guest:"ખાસ મહેમાન",
 k1:"“માસીના લગ્નમાં અમે મચાવીશું ધમાલ, તમે પણ આવજો બનીને કમાલ!!”",k2:"પૉ-ઝિટિવલી એક્સાઇટેડ! મારી હ્યુમનનાં લગ્ન છે અને તમે આમંત્રિત છો!",
-f1:"નિમંત્રક: શ્રી હરિશરણ સારસ્વત અને સમસ્ત પરિવારજન.",f2:"સપ્રેમ: વિશાલ, અંશુલ, યુગ અને સિયા. શુભેચ્છાઓ સહ: સુયેશ અને મનદીપકૌર સારસ્વત.",
+f1:"નિમંત્રક: શ્રી હરિશરણ સારસ્વત અને સમસ્ત પરિવારજન.",f2:"સપ્રેમ: મનદીપ કૌર અને સુયેશ સારસ્વત",
 ev:["ગણેશ પૂજા","મહેંદી","હળદર","સંગીત","જાન આગમન","ફેરા"],
 q:["બે પરિવાર, એક ઉત્સવ અને જીવનભરના આશીર્વાદ.","સાત ડગલાં, સાત વચન, એક અનંત સાથ.","જ્યાં પ્રેમ ત્યાં ઘર."],dy:"દિવસ",hr:"કલાક",mn:"મિનિટ",sc:"સેકન્ડ"}};
 var L="en",calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
@@ -264,7 +268,7 @@ function upd(){var t=tr(),n=$("nm").value.trim();$("pname").textContent=n||t.gue
  if(L==="hi"){m="आदरणीय सारस्वत परिवार 🙏💛\n\n"+(one?"मैं":"हम ("+guests+" लोग)")+" अदिति और शुभम के विवाह उत्सव में शामिल होने के लिए बहुत उत्साहित "+(one?"हूँ":"हैं")+": "+(ev||"सभी समारोह")+"।\nनवदंपत्ति को आशीर्वाद देने, ख़ूब नाचने-गाने और आप सबके साथ वाराणसी में जश्न मनाने का इंतज़ार रहेगा! 🪔✨\n\nढेर सारे प्यार के साथ,\n"+n}
  else if(L==="gu"){m="આદરણીય સારસ્વત પરિવાર 🙏💛\n\n"+(one?"હું":"અમે ("+guests+" લોકો)")+" અદિતિ અને શુભમના લગ્ન ઉત્સવમાં સામેલ થવા માટે ખૂબ ઉત્સાહિત "+(one?"છું":"છીએ")+": "+(ev||"બધા કાર્યક્રમો")+".\nનવદંપતીને આશીર્વાદ આપવા, ખૂબ નાચવા-ગાવા અને તમારા સૌ સાથે વારાણસીમાં ઉજવણી કરવા માટે રાહ જોઈ રહ્યા છીએ! 🪔✨\n\nખૂબ બધા પ્રેમ સાથે,\n"+n}
  else{m="Dear Saraswat family 🙏💛\n\n"+(one?"I":"We ("+guests+" of us)")+" would be absolutely delighted to join Aditi & Shubham’s wedding celebrations: "+(ev||"all the festivities")+".\nCan’t wait to bless the beautiful couple, dance our hearts out and celebrate with you all in Varanasi! 🪔✨\n\nWith lots of love,\n"+n}
- $("rsvp").href="https://wa.me/918469855113?text="+encodeURIComponent(m)}
+ $("rsvp").href="https://wa.me/917600638736?text="+encodeURIComponent(m)}
 $("nm").addEventListener("input",upd);
 $("mi").onclick=function(){guests=Math.max(1,guests-1);upd()};$("pl").onclick=function(){guests=Math.min(20,guests+1);upd()};
 $("cal").href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Aditi weds Shubham")+"&dates=20261209T143000Z/20261210T020000Z&location="+encodeURIComponent(VEN.K)+"&details="+encodeURIComponent("Baraat arrives 8 PM, dinner 8:30 PM, Panigrahan Sanskar at midnight.");
