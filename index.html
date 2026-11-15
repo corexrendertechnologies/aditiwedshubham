@@ -108,8 +108,7 @@ h2.t::after{content:"";display:block;width:100px;height:2px;margin:10px auto 0;b
 .pill input:active+span{transform:scale(.96)}
 .pill input:focus-visible+span{outline:3px solid var(--navy);outline-offset:2px}
 </style></head><body class="lock">
-<canvas id="fx" aria-hidden="true"></canvas>
-<div class="bar"><button data-l="en" class="on">EN</button><button data-l="hi">हिं</button><button data-l="gu">ગુ</button><button id="mu" aria-label="Music" style="display:none">🔊</button></div>
+<div class="bar"><button data-l="en" class="on">EN</button><button data-l="hi">हिं</button><button data-l="gu">ગુ</button></div>
 
 <div class="cover" id="cover">
   <img class="logo" data-lg alt="A and S monogram">
@@ -285,37 +284,7 @@ EV.forEach(function(e,i){var r=document.createElement("div");r.className="row";r
  function go(){[].forEach.call($("rows").children,function(x){x.classList.remove("on")});r.classList.add("on");pick=i;gate();show(r,pad(e),0)}
  r.onclick=go;r.onkeydown=function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();go()}};$("rows").appendChild(r);io.observe(r)});
 [].forEach.call(document.querySelectorAll(".rv"),function(e){io.observe(e)});
-// petals + confetti
-var cv=$("fx"),g=cv.getContext("2d"),P=[],B=[],cols=["#ff9a1f","#ffb400","#e6397d","#ffd966","#ff6b3d"];
-function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener("resize",rs);
-function pet(y){return{x:Math.random()*innerWidth,y:y,r:4+Math.random()*5,vy:.5+Math.random()*1,ph:Math.random()*6,rot:Math.random()*6,vr:(Math.random()-.5)*.04,c:cols[Math.floor(Math.random()*5)]}}
-if(!calm){for(var i=0;i<26;i++)P.push(pet(Math.random()*innerHeight));
- (function loop(){g.clearRect(0,0,cv.width,cv.height);
- P.forEach(function(p){p.y+=p.vy;p.ph+=.02;p.x+=Math.sin(p.ph)*.8;p.rot+=p.vr;if(p.y>cv.height+10){p.y=-10;p.x=Math.random()*cv.width}
-  g.save();g.translate(p.x,p.y);g.rotate(p.rot);g.fillStyle=p.c;g.globalAlpha=.75;g.beginPath();g.ellipse(0,0,p.r,p.r*.55,0,0,7);g.fill();g.restore()});
- B=B.filter(function(b){return b.l>0});B.forEach(function(b){b.x+=b.vx;b.y+=b.vy;b.vy+=.12;b.l--;g.globalAlpha=Math.min(1,b.l/30);g.fillStyle=b.c;g.fillRect(b.x,b.y,6,9)});
- requestAnimationFrame(loop)})()}
-function burst(){if(calm)return;for(var i=0;i<140;i++){var a=Math.random()*6.28,s=4+Math.random()*9;B.push({x:innerWidth/2,y:innerHeight/2,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,l:90+Math.random()*50,c:cols[i%5]})}}
-
-// music: original shehnai-style raag Bhoopali loop with tanpura + tabla
-var ax,mg,mon=false,nt=0,nb=0,pi=0,bc=0,AC=window.AudioContext||window.webkitAudioContext;
-var PH=[[4,1],[7,1],[9,1.5],[7,.5],[4,1],[2,1],[0,2],[2,1],[4,1],[7,1],[9,1],[12,1.5],[9,.5],[7,1],[4,1],[2,1],[0,2]],BT=.6;
-function F(s){return 261.63*Math.pow(2,s/12)}
-function note(f,t,d){var o=ax.createOscillator(),l=ax.createOscillator(),lg=ax.createGain(),fl=ax.createBiquadFilter(),gn=ax.createGain();
- o.type="sawtooth";o.frequency.value=f;l.frequency.value=5.5;lg.gain.value=f*.006;l.connect(lg);lg.connect(o.frequency);fl.type="lowpass";fl.frequency.value=1500;
- gn.gain.setValueAtTime(0,t);gn.gain.linearRampToValueAtTime(.15,t+.06);gn.gain.setTargetAtTime(0,t+d*.8,.12);
- o.connect(fl);fl.connect(gn);gn.connect(mg);o.start(t);l.start(t);o.stop(t+d+.8);l.stop(t+d+.8)}
-function tab(t,k){var o=ax.createOscillator(),g2=ax.createGain();o.type="sine";o.frequency.setValueAtTime(k?160:380,t);o.frequency.exponentialRampToValueAtTime(k?60:260,t+.12);
- g2.gain.setValueAtTime(k?.5:.16,t);g2.gain.exponentialRampToValueAtTime(.001,t+.18);o.connect(g2);g2.connect(mg);o.start(t);o.stop(t+.2)}
-function sched(){while(nt<ax.currentTime+1.2){var p=PH[pi++%PH.length];note(F(p[0]+12),nt,p[1]*BT);nt+=p[1]*BT}
- while(nb<ax.currentTime+1.2){tab(nb,bc++%4===0);nb+=BT/2}}
-function music(){if(!AC)return;if(!ax){ax=new AC();mg=ax.createGain();mg.gain.value=0;var d=ax.createDelay(),fb=ax.createGain();d.delayTime.value=.28;fb.gain.value=.35;
-  mg.connect(ax.destination);mg.connect(d);d.connect(fb);fb.connect(d);d.connect(ax.destination);
-  [-12,-5].forEach(function(s){var o=ax.createOscillator(),gg=ax.createGain();o.type="triangle";o.frequency.value=F(s);gg.gain.value=.07;o.connect(gg);gg.connect(mg);o.start()});
-  nt=nb=ax.currentTime+.1;setInterval(sched,300)}
- ax.resume();mon=!mon;mg.gain.setTargetAtTime(mon?.3:0,ax.currentTime,.15);$("mu").textContent=mon?"🔊":"🔇"}
-$("mu").onclick=music;
-$("open").onclick=function(){$("cover").classList.add("gone");document.body.classList.remove("lock");scrollTo(0,0);burst();$("mu").style.display="";if(!mon)music()};
+$("open").onclick=function(){$("cover").classList.add("gone");document.body.classList.remove("lock");scrollTo(0,0)};
 var sv;try{sv=localStorage.getItem("lang")}catch(e){}
 applyLang(T[sv]?sv:"en");
 $("fab").onclick=function(e){e.preventDefault();$("pass").scrollIntoView({behavior:"smooth"})};
